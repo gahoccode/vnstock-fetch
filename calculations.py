@@ -39,13 +39,12 @@ def calculate_returns():
     price_columns = [col for col in returns_data.columns if not col.endswith('_pct_change')]
     returns_data = returns_data.drop(columns=price_columns)
     
+    # Drop rows with NaN values
+    returns_data = returns_data.dropna()
+    
     # Keep time as index - do not reset
     return returns_data
 
-#returns_data = calculate_returns()
+returns_data = calculate_returns()
 
-#print(returns_data.head())
-
-
-
-
+print(returns_data.head())
