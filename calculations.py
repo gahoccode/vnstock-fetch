@@ -42,26 +42,10 @@ def calculate_returns():
     # Keep time as index - do not reset
     return returns_data
 
+#returns_data = calculate_returns()
+
+#print(returns_data.head())
 
 
 
 
-def main():
-    """
-    Main function to run when the script is executed directly.
-    """
-    try:
-        print(f"Using combined prices data with {len(combined_prices)} rows and {len(combined_prices.columns)} columns")
-        
-        # Calculate returns
-        returns_data = calculate_returns()
-        print("\nSample of calculated returns:")
-        print(returns_data.head(3))
-        
-        
-    except Exception as e:
-        print(f"Error in calculations: {e}")
-
-
-if __name__ == "__main__":
-    main()
