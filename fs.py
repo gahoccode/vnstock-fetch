@@ -11,9 +11,10 @@ CashFlow = stock.finance.cash_flow(period='year', dropna=True)
 # Chỉ số tài chính
 Ratio = stock.finance.ratio(period='year', lang='vi', dropna=True)
 
-def save_to_csv(BalanceSheet, IncomeStatement, CashFlow, Ratio):
-    BalanceSheet.to_csv('BalanceSheet.csv')
-    IncomeStatement.to_csv('IncomeStatement.csv')
-    CashFlow.to_csv('CashFlow.csv')
-    Ratio.to_csv('Ratio.csv')
-save_to_csv(BalanceSheet, IncomeStatement, CashFlow, Ratio)
+def save_to_csv():
+    BalanceSheet.to_csv('BalanceSheet.csv', index=False)
+    IncomeStatement.to_csv('IncomeStatement.csv', index=False)
+    CashFlow.to_csv('CashFlow.csv', index=False)
+    Ratio.to_csv('Ratio.csv', index=False)
+save_to_csv()
+
