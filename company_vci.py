@@ -4,8 +4,9 @@ company = Company('ACB')
 CompanyReports = company.reports()
 CompanyAffiliate = company.affiliate()
 
-WorkingStatus='working'
-CompanyOfficers = company.officers(filter_by=WorkingStatus).head() # filter_by='all' hoặc 'working' hoặc 'resigned'
+WorkStatus='working'
+CompanyOfficers = company.officers(filter_by=WorkStatus).head() 
+# filter_by='all' hoặc 'working' hoặc 'resigned'
 
 def save_to_csv():
     CompanyOfficers.to_csv('CompanyOfficers.csv', index=False)
