@@ -20,41 +20,26 @@ def save_to_csv():
 
 company = Vnstock().stock(symbol='VCB', source='TCBS').company
 
-"""#### Tổng quan"""
-
+# Tổng quan
 CompanyOverview = company.overview()
-
-"""#### Hồ sơ"""
-
+# Hồ sơ
 CompanyProfile = company.profile()
-
-"""#### Cổ đông"""
-
+# Cổ đông
 CompanyShareholders = company.shareholders()
-
-"""#### Giao dịch nội bộ"""
-
-CompanyInsiderDeals = company.insider_deals().head(3)
-
-"""#### Công ty con, liên kết"""
-
-CompanySubsidiaries = company.subsidiaries().head()
-
-"""#### Ban lãnh đạo"""
-
-CompanyOfficers = company.officers().head()
-
-"""#### Sự kiện"""
-
-CompanyEvents = company.events().head()
-
-"""#### Tin tức"""
-
-CompanyNews = company.news().head()
-
-"""#### Cổ tức"""
-
-CompanyDividends = company.dividends().head()
+# Giao dịch nội bộ
+CompanyInsiderDeals = company.insider_deals()
+# Giao dịch ngoại bộ
+CompanySubsidiaries = company.subsidiaries()
+# Ban lãnh đạo
+CompanyOfficers = company.officers()
+# Sự kiện
+CompanyEvents = company.events()
+# Tin tức
+CompanyNews = company.news()
+# Cổ tức        
+CompanyDividends = company.dividends()
+# Báo cáo
+CompanyReports = company.reports()
 
 def save_company_data():
     CompanyOverview.to_csv('CompanyOverview.csv', index=False)
