@@ -2,6 +2,8 @@ from vnstock import Screener
 from vnstock import Vnstock
 import pandas as pd
 
+symbol='VCI'
+source='VCI'
 def get_screener_data(exchange_names="HOSE,HNX,UPCOM", limit=1700):
     """
     Fetch stock screener data from VCI source.
@@ -18,7 +20,7 @@ def get_screener_data(exchange_names="HOSE,HNX,UPCOM", limit=1700):
     pandas.DataFrame
         DataFrame containing screener data for all stocks
     """
-    stock = Vnstock().stock(symbol='VCI', source='VCI')
+    stock = Vnstock().stock(symbol=symbol, source=source)
     screener_df = stock.screener.stock(params={"exchangeName": exchange_names}, limit=limit)
     return screener_df
 
@@ -93,4 +95,4 @@ if __name__ == "__main__":
         print(heating_up_stocks[display_columns].head(10))  # Show only first 10 rows
         
         # Save to CSV
-        save_heating_up_stocks_to_csv(heating_up_stocks)
+        #save_heating_up_stocks_to_csv(heating_up_stocks)

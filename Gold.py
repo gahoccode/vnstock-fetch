@@ -5,8 +5,10 @@ import time
 from vnstock.explorer.misc import *
 
 source = 'VCI' # 'VCI' hoặc 'TCBS'
+symbol='VN30F1M'
+# Create Vnstock object and fetch stock data
 
-stock = Vnstock().stock(symbol='VN30F1M', source='VCI')
+stock = Vnstock().stock(symbol=symbol, source=source)
 df = stock.quote.history(start='2020-01-01', end='2024-12-31')
 # Đặt cột 'time' làm cột index
 df.set_index('time', inplace=True)
@@ -141,6 +143,7 @@ if not gold_prices.empty:
     print(gold_prices.tail())
     
     # Save to CSV
-    output_file = "gold_prices.csv"
-    gold_prices.to_csv(output_file, index=False)
-    print(f"\nGold prices saved to {output_file}")
+    def save_gold_prices_to_csv():
+        output_file = "gold_prices.csv"
+        gold_prices.to_csv(output_file, index=False)
+        print(f"\nGold prices saved to {output_file}")
