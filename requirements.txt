@@ -5,3 +5,4 @@ seaborn>=0.13.0
 tenacity>=9.0.0
 streamlit>=1.32.0
 gunicorn
+rich>=13.7.0

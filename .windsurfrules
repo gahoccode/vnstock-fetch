@@ -1,0 +1,3 @@
+Add Rich and Ruff to requirements.txt and pyproject.toml and pin down the version
+Add from rich import print to all python files
+Add [tool.ruff.lint] to pyproject.toml
